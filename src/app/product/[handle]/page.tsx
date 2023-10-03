@@ -11,7 +11,6 @@ import { getProduct, getProductRecommendations } from '@/lib/shopify';
 import { Image } from '@/lib/shopify/types';
 import Link from 'next/link';
 
-export const runtime = 'edge';
 
 export async function generateMetadata({
   params
@@ -38,15 +37,15 @@ export async function generateMetadata({
     },
     openGraph: url
       ? {
-          images: [
-            {
-              url,
-              width,
-              height,
-              alt
-            }
-          ]
-        }
+        images: [
+          {
+            url,
+            width,
+            height,
+            alt
+          }
+        ]
+      }
       : null
   };
 }
